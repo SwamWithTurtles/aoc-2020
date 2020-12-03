@@ -18,4 +18,6 @@ public class IntPair extends Pair<Integer, Integer> implements Arithmeticable {
     public Integer product() {
         return getFirst() * getSecond();
     }
+
+
 }

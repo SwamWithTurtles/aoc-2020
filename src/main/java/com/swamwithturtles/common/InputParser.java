@@ -28,4 +28,13 @@ public class InputParser {
         return Arrays.stream(fileContents.split("\n")).map(Integer::parseInt).collect(Collectors.toSet());
     }
 
+    public Set<String> loadAsSetOfStrings() throws IOException {
+        String fileContents = loadFromFile();
+        return Arrays.stream(fileContents.split("\n")).collect(Collectors.toSet());
+    }
+
+    public List<String> loadAsListOfStrings() throws IOException {
+        String fileContents = loadFromFile();
+        return Arrays.stream(fileContents.split("\n")).collect(Collectors.toList());
+    }
 }
