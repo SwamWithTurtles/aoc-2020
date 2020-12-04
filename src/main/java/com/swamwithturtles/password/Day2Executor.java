@@ -1,14 +1,13 @@
 package com.swamwithturtles.password;
 
 import com.swamwithturtles.common.InputParser;
-import com.swamwithturtles.expenses.Expenses;
 import java.io.IOException;
 import java.util.Set;
 
 public class Day2Executor {
 
     public static void main(String[] args) throws IOException {
-        Set<String> input = new InputParser("day2.txt").loadAsSetOfStrings();
+        Set<String> input = new InputParser("day2.txt").loadAsSetOfStrings("\n");
 
 
         long numberOfCompliantPasswordsWithFrequencyPolicy = input.stream()

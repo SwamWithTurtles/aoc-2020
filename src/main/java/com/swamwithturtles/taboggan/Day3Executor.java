@@ -36,7 +36,7 @@ public class Day3Executor {
     }
 
     private static TreeMap parseTreeMap() throws IOException {
-        List<String> input = new InputParser("day3.txt").loadAsListOfStrings();
+        List<String> input = new InputParser("day3.txt").loadAsListOfStrings("\n");
 
         List<TreeRow> treeRows = input.stream()
                 .map(TreeRow::fromString)
