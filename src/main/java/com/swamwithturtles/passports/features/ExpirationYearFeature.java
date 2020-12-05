@@ -4,11 +4,12 @@ import com.swamwithturtles.common.DateTimeUtils;
 import com.swamwithturtles.passports.PassportFeature;
 import com.swamwithturtles.passports.ValidationType;
 
-public class ExpirationYearFeature implements PassportFeature {
-    private Integer year;
+public class ExpirationYearFeature extends YearFeature {
 
     public ExpirationYearFeature(String component) {
-        this.year = DateTimeUtils.parseFourDigitYear(component).orElse(null);
+        super(component);
+        this.minYear = 2020;
+        this.maxYear = 2030;
     }
 
     @Override
@@ -16,12 +17,4 @@ public class ExpirationYearFeature implements PassportFeature {
         return "EXPIRATION_YEAR";
     }
 
-    @Override
-    public Boolean isValid(ValidationType validationType) {
-        if(validationType == ValidationType.PRESENCE) {
-            return true;
-        }
-
-        return year != null && year >= 2020 && year <= 2030;
-    }
 }

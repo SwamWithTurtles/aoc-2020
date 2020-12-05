@@ -37,10 +37,8 @@ public class HeightFeature implements PassportFeature {
             return measure >= 59 && measure <= 76;
         }
 
-        if(heightUnit == HeightUnit.CENTIMETERS) {
-            return measure >= 150 && measure <= 193;
-        }
+        //therefore heightUnit = cm
+        return measure >= 150 && measure <= 193;
 
-        throw new RuntimeException("Wat?");
-    }
+        }
 }
